@@ -1,8 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
-function LoginPage() {
+interface LoginPageProps {
+  onLogin: () => void;
+}
+
+const LoginPage: React.FC<LoginPageProps> = ({ onLogin }) => {
   const [action, setAction] = useState("Sign up");
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    // Логіка перевірки логіну та пароля тут
+
+    // При умові успішного входу, викликаємо onLogin, який змінить стан isLoggedIn в батьківському компоненті
+    onLogin();
+    navigate("/bills"); // Переход на головну сторінку після успішного входу
+  };
 
   return (
     <div className="container">
@@ -49,6 +63,9 @@ function LoginPage() {
         <div
           className={action === "Sign up" ? "submit gray" : "submit"}
           onClick={() => {
+            if (action === "Login") {
+              handleLogin();
+            }
             setAction("Login");
           }}
         >
@@ -57,6 +74,6 @@ function LoginPage() {
       </div>
     </div>
   );
-}
+};
 
 export default LoginPage;

@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1245678",
+    "name": "debit card",
+    "balance": 13.97,
+    "currency": "USD",
+    "type": "card"
+  },
+  {
+    "id": "87654321",
+    "name": "credit card",
+    "balance": -97.05,
+    "currency": "UAH",
+    "type": "card"
+  }
+]
