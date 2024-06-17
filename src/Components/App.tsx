@@ -5,20 +5,33 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import LoginPage from "./components/Login/LoginPage";
-import BillsPage from "./components/Bills/BillsPage";
+import LoginPage from "./Login/LoginPage";
+import BillsPage from "./Bills/BillsPage";
+import MainFrame from "./MainFrame/MainFrame";
+import "./App.css";
 
 const AppRouter: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const handleLogin = () => {
-    // Логіка перевірки логіну та пароля (за допомогою API або локально)
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isRightMenuOpen, setIsRightMenuOpen] = useState(false);
 
-    // При умові успішного входу:
+  const handleLogin = () => {
     setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
   };
 
   return (
     <Router>
+      {isLoggedIn && (
+        <MainFrame
+          onLogout={handleLogout}
+          isRightMenuOpen={isRightMenuOpen}
+          setIsRightMenuOpen={setIsRightMenuOpen}
+        />
+      )}
       <Routes>
         <Route
           path="/login"
@@ -30,10 +43,9 @@ const AppRouter: React.FC = () => {
             )
           }
         />
-
         <Route
           path="/bills"
-          element={isLoggedIn ? <BillsPage /> : <Navigate to="/" />}
+          element={isLoggedIn ? <BillsPage /> : <Navigate to="/login" />}
         />
         <Route path="/" element={<Navigate to="/login" />} />
       </Routes>

@@ -1,0 +1,22 @@
+.right-side-menu {
+  position: fixed;
+  top: 50px;
+  z-index: 900;
+  right: 0px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  margin-top: 0px;
+  background-color: #a0a0a0;
+  border-bottom-left-radius: 5px;
+
+  list-style-type: none;
+}
+
+.right-side-menu li {
+  margin-bottom: 10px;
+  font-size: 16;
+  color: #ffffff;
+  cursor: pointer;
+}

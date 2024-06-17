@@ -1,0 +1,9 @@
+.main-content {
+  transition: margin-left 0.3s;
+  padding: 20px;
+  margin-left: 60px; /* Початковий відступ для закритого меню */
+}
+
+.sidebar.open + .main-content {
+  margin-left: 200px; /* Відступ для відкритого меню */
+}

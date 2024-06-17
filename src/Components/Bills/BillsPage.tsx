@@ -22,14 +22,14 @@ const BillsPage: React.FC = () => {
 
   return (
     <div className="bills-wrapper">
-      {data.map((item, index) => (
+      {/* {data.map((item, index) => (
         <Bill
           item={item}
           isVisible={visibleIndex === index}
           onClick={() => handleClick(index)}
         />
       ))}
-      <button className="addBill">Add</button>
+      <button className="addBill">Add</button> */}
     </div>
   );
 };

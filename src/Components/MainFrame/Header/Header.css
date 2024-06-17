@@ -1,0 +1,32 @@
+.header {
+  position: fixed;
+  z-index: 1000;
+  height: 50px;
+  width: 100%;
+  background-color: #676767;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-pic {
+  position: fixed;
+  top: 7.5px;
+  right: 10px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circular-photo {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.circular-photo-placeholder {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: white;
+}
